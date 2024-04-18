@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
         printf("%d\n", HASHTABLE_CAPACITY);
         //srand(time(NULL));
         srand(static_cast<unsigned int>(time(NULL)));
-        // 使用当前时间作为随机种子
+        // random seed
         long Random[4];
         for (int i = 0; i < 4; i++){
             Random[i] = rand();
@@ -63,14 +63,14 @@ int main(int argc, const char * argv[]) {
                 printf("Error opening file!\n");
                 exit(1);
             }
-            // 定义缓冲区
+            
             char buffer[32];
-            // 使用 fgets 读取文件中的每一行
+            
 //            int pktCnt = 0;
 //            auto start = std::chrono::high_resolution_clock::now();
             
             while (fgets(buffer, sizeof(buffer), fp) != NULL){
-                // 在这里处理每一行的内容
+                
                 //pktCnt++;
                 if (buffer[0] == '\n'){
                     continue;
@@ -111,14 +111,14 @@ int main(int argc, const char * argv[]) {
             }
 //            auto end = std::chrono::high_resolution_clock::now();
 //
-//            // 计算时间差
+//            // 
 //            std::chrono::duration<double> duration = end - start;
 //            double seconds = duration.count();
 //            double throughput = pktCnt / seconds;
 //            cout << "Packet Count is: " << pktCnt << endl;
 //            cout << "Duration is: " << seconds << endl;
 //            cout << "ThroughPut is: " << throughput << endl;
-            // 关闭文件
+            // 
             printf("End: %d\n", i);
             fclose(fp);
         }
@@ -130,8 +130,8 @@ int main(int argc, const char * argv[]) {
 //        myAROMA.PrintHashTable();
 //        myAROMA.PrintHashTableMerge();
 
-        FILE *fp[ROW];//路径
-        FILE *fp_NoFlowLabel[ROW];//路径
+        FILE *fp[ROW];
+        FILE *fp_NoFlowLabel[ROW];
         for (int k = 1; k <= ROW; k++){
             printf("Spread Start: %d\n", k);
             char Path[300];
@@ -154,10 +154,10 @@ int main(int argc, const char * argv[]) {
             printf("Error opening file!\n");
             exit(1);
         }
-        // 定义缓冲区
+        
         char buffer[32];
         vector<float> EstimatedKSpreadNum(ROW);
-        // 使用 fgets 读取文件中的每一行
+        
         while (fgets(buffer, sizeof(buffer), fp1) != NULL){
             buffer[strlen(buffer) - 1] = '\0';
             if (strcmp(buffer, "") == 0){
