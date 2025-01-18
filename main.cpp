@@ -54,10 +54,10 @@ int main(int argc, const char * argv[]) {
         for (int i = 1; i <= ROW; i++){
             printf("Start: %d\n", i);
             char Path[100];
-            //snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/test/o%dtest.txt", i);
-            //snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/dataset_nonduplicate/o%d.txt", i);
-            snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/dataset_nonduplicate/oo%d.txt", i);
-            //snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/dataset_yuanshi/o%d.txt", i);
+            //snprintf(Path, sizeof(Path), "/dataset/test/o%dtest.txt", i);
+            //snprintf(Path, sizeof(Path), "/dataset/dataset_nonduplicate/o%d.txt", i);
+            snprintf(Path, sizeof(Path), "/dataset/dataset_nonduplicate/oo%d.txt", i);
+            //snprintf(Path, sizeof(Path), "/dataset/dataset_yuanshi/o%d.txt", i);
             FILE *fp = fopen(Path, "r");
             if (fp == NULL){
                 printf("Error opening file!\n");
@@ -136,20 +136,20 @@ int main(int argc, const char * argv[]) {
             printf("Spread Start: %d\n", k);
             char Path[300];
             char Path_E_NoFlowLabel[300];
-            //snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/test/output_%d_spread_Estimated.txt", k);
-            //snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/output/output_%dMb/output_%d_spread_Estimated.txt", round_C, k);
-            snprintf(Path, sizeof(Path), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/output/output_%dMb/output_%d_spread_Estimated.txt", round_C, k);
+            //snprintf(Path, sizeof(Path), "/dataset/test/output_%d_spread_Estimated.txt", k);
+            //snprintf(Path, sizeof(Path), "/dataset/output/output_%dMb/output_%d_spread_Estimated.txt", round_C, k);
+            snprintf(Path, sizeof(Path), "/dataset/output/output_%dMb/output_%d_spread_Estimated.txt", round_C, k);
             fp[k - 1] = fopen(Path, "w");
-            //snprintf(Path_E_NoFlowLabel, sizeof(Path_E_NoFlowLabel), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/test/output_%d_spread_Estimated_NoFlowLabel.txt", k);
-            //snprintf(Path_E_NoFlowLabel, sizeof(Path_E_NoFlowLabel), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/Graph/Graph_Data/Graph_Data_%dMb/output_%d_spread_Estimated_NoFlowLabel.txt", round_C, k);
-//            snprintf(Path_E_NoFlowLabel, sizeof(Path_E_NoFlowLabel), "/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/Graph/Graph_Data/Graph_Data_0.%dMb/output_%d_spread_Estimated_NoFlowLabel.txt", round_C, k);
+            //snprintf(Path_E_NoFlowLabel, sizeof(Path_E_NoFlowLabel), "/dataset/test/output_%d_spread_Estimated_NoFlowLabel.txt", k);
+            //snprintf(Path_E_NoFlowLabel, sizeof(Path_E_NoFlowLabel), "/Graph/Graph_Data/Graph_Data_%dMb/output_%d_spread_Estimated_NoFlowLabel.txt", round_C, k);
+//            snprintf(Path_E_NoFlowLabel, sizeof(Path_E_NoFlowLabel), "/Graph/Graph_Data/Graph_Data_0.%dMb/output_%d_spread_Estimated_NoFlowLabel.txt", round_C, k);
 //            fp_NoFlowLabel[k - 1] = fopen(Path_E_NoFlowLabel, "w");
         }
 
-        //FILE *fp1 = fopen("/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/test/output_FlowLabel_test.txt", "r");
-        //FILE *fp1 = fopen("/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/dataset_nonduplicate/output_FlowLabel_HashMap_Sample.txt", "r");
-        //FILE *fp1 = fopen("/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/dataset_nonduplicate/output_FlowLabel_HashMap_copy.txt", "r");
-        FILE *fp1 = fopen("/Users/yaoda/Desktop/Paper/Haibo/INFOCOM2024/dataset/dataset_nonduplicate/output_FlowLabel_HashMap.txt", "r");
+        //FILE *fp1 = fopen("/dataset/test/output_FlowLabel_test.txt", "r");
+        //FILE *fp1 = fopen("/dataset/dataset_nonduplicate/output_FlowLabel_HashMap_Sample.txt", "r");
+        //FILE *fp1 = fopen("/dataset/dataset_nonduplicate/output_FlowLabel_HashMap_copy.txt", "r");
+        FILE *fp1 = fopen("/dataset/dataset_nonduplicate/output_FlowLabel_HashMap.txt", "r");
         if (fp1 == NULL){
             printf("Error opening file!\n");
             exit(1);
